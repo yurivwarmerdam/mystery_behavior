@@ -1,0 +1,37 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="a_button" type="Control" parent="."]
+modulate = Color( 0.545098, 0.670588, 1, 1 )
+anchor_left = 0.887695
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="buttons" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -113.0
+color = Color( 0.545098, 0.670588, 1, 1 )
+
+[node name="save" type="Button" parent="buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -101.0
+margin_top = 18.0
+margin_right = -11.0
+margin_bottom = 49.0
+text = "save"
+
+[node name="load" type="Button" parent="buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -101.0
+margin_top = 56.0
+margin_right = -11.0
+margin_bottom = 87.0
+text = "load"

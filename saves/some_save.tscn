@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://some_nodes.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://a_node.tscn" type="PackedScene" id=4]
+
+[node name="some_nodes" type="Node"]
+script = ExtResource( 2 )
+
+[node name="a_node" parent="." instance=ExtResource( 4 )]
+position = Vector2( 413, 228 )
+
+[node name="Sprite" type="Sprite" parent="a_node"]
+modulate = Color( 0.735984, 0.621225, 0.962688, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 644, 234 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@2"]
+modulate = Color( 0.978975, 0.256011, 0.734578, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 110, 464 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@3"]
+modulate = Color( 0.353845, 0.315224, 0.92217, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 173, 253 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@4"]
+modulate = Color( 0.418812, 0.127155, 0.615166, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 422, 397 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@5"]
+modulate = Color( 0.120523, 0.573979, 0.258368, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 562, 450 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@6"]
+modulate = Color( 0.255518, 0.556584, 0.898887, 1 )
+texture = ExtResource( 3 )
+
+[node name="@a_node@7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 494, 310 )
+
+[node name="Sprite" type="Sprite" parent="@a_node@7"]
+modulate = Color( 0.990301, 0.253033, 0.536025, 1 )
+texture = ExtResource( 3 )
