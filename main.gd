@@ -16,13 +16,16 @@ func _unhandled_input(event):
 		new_node.position=event.position
 		$some_nodes.add_child(new_node)
 
-var save_path="res://saves/some_save.tscn"
+#var save_path="res://saves/some_save.tscn"
+var save_path="res://saves/some_save01.tscn"
 
 func save():
 	var save_data=PackedScene.new()
 	var all_children=get_all_children($some_nodes)
 	for child in all_children:
-		child.set_owner($some_nodes)
+		print("owner: ",child.owner)
+		if child.get_owner() == null:
+			child.set_owner($some_nodes)
 
 	save_data.pack($some_nodes)
 	ResourceSaver.save(save_path,save_data)

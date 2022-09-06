@@ -1,12 +1,14 @@
 extends Node2D
 
 var _save_params={} setget ,get_save_params
-
+onready var my_resource:a_resource=null
 
 func _ready():
-	randomize()
 	print("ready")
-	$Sprite.modulate=Color(randf(),randf(),randf())
+	if my_resource == null:
+		my_resource=a_resource.new()
+		
+	$Sprite.modulate=my_resource.my_color
 
 func get_savedata():
 	pass
