@@ -1,20 +1,23 @@
 extends Node2D
 
-var _save_params={} setget ,get_save_params
-onready var my_resource:a_resource=null
+var savedata:SaveData # setget ,get_savedata
 
 func _ready():
 	print("ready")
-	if my_resource == null:
-		my_resource=a_resource.new()
-		
-	$Sprite.modulate=my_resource.my_color
+	if savedata == null:
+		savedata=SaveData.new()
+		savedata.my_color=Color(randf(),randf(),randf())
+	$Sprite.modulate=savedata.my_color
 
-func get_savedata():
-	pass
+func get_savedata()->SaveData:
+	var savedata=SaveEntityResource.new()
+	savedata.entity=self
+	savedata.state=savedata
+	return savedata
 
-func get_save_params():
-	_save_params={}
-	_save_params["position"]=self.position
-	_save_params["color"]=$Sprite.modulate
-	return _save_params
+func load_savedata(savedata:SaveData):
+	self.savedata=savedata
+
+
+class SaveData extends Resource:
+	var my_color:Color

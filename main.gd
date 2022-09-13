@@ -16,24 +16,24 @@ func _unhandled_input(event):
 		new_node.position=event.position
 		$some_nodes.add_child(new_node)
 
+
 #var save_path="res://saves/some_save.tscn"
-var save_path="res://saves/some_save01.tscn"
+var save_path="res://saves/some_save.tres"
 
 func save():
-	var save_data=PackedScene.new()
-	var all_children=get_all_children($some_nodes)
-	for child in all_children:
-		print("owner: ",child.owner)
-		if child.get_owner() == null:
-			child.set_owner($some_nodes)
-
-	save_data.pack($some_nodes)
-	ResourceSaver.save(save_path,save_data)
+	var save_data:Resource=packing_resource.new()
+	for child in $some_nodes.get_children():
+		save_data.my_resources.append(child.get_savedata())
+	ResourceSaver.save(save_path,save_data,64)
 	
 func load():
-	$some_nodes.free()
-	var load_data=load(save_path).instance()
-	add_child(load_data,true)
+	for child in $some_nodes.get_children():
+		child.free()
+	var load_data=load(save_path)
+	for resource in load_data.my_resources:
+		var new_obj=resource.entity
+		new_obj.load_savedata(resource.state)
+		$some_nodes.add_child(new_obj.entity,true)
 	pass
 
 
@@ -44,3 +44,6 @@ func get_all_children(node:Node)->Array:
 		for child in result:
 			result=result+get_all_children(child)
 	return result
+
+class packing_resource extends Resource:
+	export var my_resources:Array=[]

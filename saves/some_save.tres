@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://save_entity_resource.gd" type="Script" id=1]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=4]
+
+[resource]
+script = SubResource( 4 )
+my_resources = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

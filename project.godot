@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "a_resource",
+"class": "SaveEntityResource",
 "language": "GDScript",
-"path": "res://a_resource.gd"
+"path": "res://save_entity_resource.gd"
 } ]
 _global_script_class_icons={
-"a_resource": ""
+"SaveEntityResource": ""
 }
 
 [application]
