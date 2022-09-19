@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "SaveEntityResource",
 "language": "GDScript",
 "path": "res://save_entity_resource.gd"
+}, {
+"base": "Resource",
+"class": "SimpleResource",
+"language": "GDScript",
+"path": "res://SimpleResource.gd"
 } ]
 _global_script_class_icons={
-"SaveEntityResource": ""
+"SaveEntityResource": "",
+"SimpleResource": ""
 }
 
 [application]

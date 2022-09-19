@@ -1,18 +1,57 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=14 format=2]
 
 [ext_resource path="res://save_entity_resource.gd" type="Script" id=1]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 1 )
+[sub_resource type="GDScript" id=1]
 
 [sub_resource type="Resource" id=2]
-script = ExtResource( 1 )
+script = SubResource( 1 )
+my_color = Color( 0.0776197, 0.621564, 0.0923077, 1 )
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 2 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="Resource" id=4]
+script = SubResource( 1 )
+my_color = Color( 0.452745, 0.579002, 0.276289, 1 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 4 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 2 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 4 )
+
+[sub_resource type="Resource" id=9]
+script = SubResource( 1 )
+my_color = Color( 0.0915185, 0.792415, 0.499028, 1 )
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 9 )
+
+[sub_resource type="Resource" id=11]
+script = SubResource( 1 )
+my_color = Color( 0.749842, 0.381925, 0.543915, 1 )
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 1 )
+prefab = "res://a_node.tscn"
+state = SubResource( 11 )
+
+[sub_resource type="GDScript" id=6]
 
 [resource]
-script = SubResource( 4 )
-my_resources = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+script = SubResource( 6 )
+my_resources = [ SubResource( 3 ), SubResource( 5 ), SubResource( 7 ), SubResource( 8 ), SubResource( 10 ), SubResource( 12 ) ]
