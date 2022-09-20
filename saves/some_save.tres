@@ -1,18 +1,45 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=10 format=2]
 
 [ext_resource path="res://save_entity_resource.gd" type="Script" id=1]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 1 )
+[sub_resource type="GDScript" id=1]
 
 [sub_resource type="Resource" id=2]
-script = ExtResource( 1 )
+script = SubResource( 1 )
+my_color = Color( 0.0442263, 0.0722759, 0.296993, 1 )
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 1 )
+entity = "res://a_node.tscn"
+state = SubResource( 2 )
+position = Vector2( 436, 177 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="Resource" id=4]
+script = SubResource( 1 )
+my_color = Color( 0.336805, 0.711416, 0.274095, 1 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+entity = "res://a_node.tscn"
+state = SubResource( 4 )
+position = Vector2( 548, 145 )
+
+[sub_resource type="Resource" id=6]
+script = SubResource( 1 )
+my_color = Color( 0.140373, 0.974758, 0.814209, 1 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+entity = "res://a_node.tscn"
+state = SubResource( 6 )
+position = Vector2( 536, 303 )
+
+[sub_resource type="GDScript" id=8]
 
 [resource]
-script = SubResource( 4 )
-my_resources = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+script = SubResource( 8 )
+my_resources = {
+"@a_node@2": SubResource( 5 ),
+"@a_node@3": SubResource( 7 ),
+"a_node": SubResource( 3 )
+}

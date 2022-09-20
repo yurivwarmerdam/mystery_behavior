@@ -9,15 +9,15 @@ func _ready():
 		savedata.my_color=Color(randf(),randf(),randf())
 	$Sprite.modulate=savedata.my_color
 
-func get_savedata()->SaveData:
-	var savedata=SaveEntityResource.new()
-	savedata.entity=self
-	savedata.state=savedata
-	return savedata
+func get_savedata()->SaveEntityResource:
+	var data=SaveEntityResource.new()
+	data.set_data(self,savedata)
+	#data.entity=filename
+	#data.state=savedata
+	return data
 
 func load_savedata(savedata:SaveData):
 	self.savedata=savedata
 
-
 class SaveData extends Resource:
-	var my_color:Color
+	export var my_color:Color

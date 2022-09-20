@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://SimpleResource.gd" type="Script" id=1]
+[ext_resource path="res://InnerResource.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+state = Color( 0.678802, 0.530839, 0.345839, 1 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+state = Color( 0.179099, 0.128667, 0.920615, 1 )
+
+[resource]
+script = ExtResource( 1 )
+state = "hello world!"
+inner_state = {
+"key1": SubResource( 1 ),
+"key2": SubResource( 2 )
+}
